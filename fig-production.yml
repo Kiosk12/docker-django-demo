@@ -1,0 +1,11 @@
+db:
+  image: postgres
+web:
+  build: .
+  command: ./run_web.sh
+  volumes:
+    - .:/code
+  ports:
+    - "80:8000"
+  links:
+    - db
